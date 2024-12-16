@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -7,50 +7,103 @@
 <style>
   body {
     margin: 0;
-    padding: 0;
-    background: #000; /* black background */
-    color: #fff;       /* white text */
+    padding: 20px;
+    background: #000;
+    color: #fff;
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    /* Removed the centering flex so heading sits higher */
   }
+
   h1 {
     font-size: 2em;
     margin-bottom: 0.5em;
+    margin-top: 0; /* ensure it starts from top padding */
+    text-align: center;
   }
+
   hr {
     width: 60px;
     border: none;
     border-top: 2px solid #fff;
-    margin: 1em 0;
+    margin: 1em auto; /* center the HR */
   }
-  nav {
-    margin-left: 20px;
+
+  .about {
+    font-style: italic;
+    font-size: 0.9em;
+    max-width: 600px;
+    margin: 1em auto;
+    line-height: 1.4em;
+    text-align: center;
   }
-  nav a {
+
+  /* Letterboxd and Writing Links near top (below about) */
+  .top-nav {
+    text-align: center;
+    margin-top: 1em;
+  }
+
+  .top-nav a {
     color: #fff;
     text-decoration: none;
     margin: 0 0.5em;
     font-size: 1em;
   }
-  nav a:hover {
+
+  .top-nav a:hover {
     text-decoration: underline;
+  }
+
+  /* Bottom-right social links */
+  .bottom-right-nav {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    text-align: right;
+  }
+
+  .bottom-right-nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 0.5em;
+  }
+
+  .bottom-right-nav a:hover {
+    text-decoration: underline;
+  }
+
+  /* Twitter & Instagram normal size */
+  .bottom-right-nav a:not(.linkedin) {
+    font-size: 1em;
+  }
+
+  /* LinkedIn link 1/4 size of others */
+  .bottom-right-nav a.linkedin {
+    font-size: 0.25em;
   }
 </style>
 </head>
 <body>
   <h1>Josh Hansan</h1>
   <hr>
-  <nav>
+  <p class="about">
+    I am a 28 year old working in the healthcare investments world in New York City. 
+    My professional focuses include biotech, consumer tech, preventative medicine, longevity, 
+    and pre-clinical assets. In my spare time, I focus my readings and writings on 
+    socioeconomic policy, American history, Futurism, financial technology, college athletics, 
+    and general health and wellness. Please like my Letterboxd reviews while you're here.
+  </p>
+  
+  <div class="top-nav">
+    <a href="https://letterboxd.com/jhansan/" target="_blank">Letterboxd</a>
+    <a href="writing.html">Writing</a>
+  </div>
+
+  <div class="bottom-right-nav">
     <a href="https://twitter.com/joshhansan" target="_blank">Twitter</a>
     <a href="https://instagram.com/josh_hansan" target="_blank">Instagram</a>
-    <a href="https://www.linkedin.com/in/josh-hansan-1296a111a/" target="_blank">LinkedIn</a>
-    <a href="https://letterboxd.com/jhansan/" target="_blank">Letterboxd</a>
-    <!-- New Writing Link -->
-    <a href="writing.html">Writing</a>
-  </nav>
+    <a href="https://www.linkedin.com/in/josh-hansan-1296a111a/" target="_blank" class="linkedin">LinkedIn</a>
+  </div>
 </body>
 </html>
