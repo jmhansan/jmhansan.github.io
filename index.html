@@ -8,97 +8,89 @@
   body {
     margin: 0;
     padding: 20px;
-    background: #FFFFF0; 
+    background: #F0F0F0; /* Slightly gray background */
     color: #000;
     font-family: Arial, sans-serif;
   }
 
+  /* Social links at the top */
+  .top-nav {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .top-nav a {
+    color: #000; /* Black links */
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1em;
+  }
+
+  .top-nav a:hover {
+    text-decoration: underline;
+  }
+
+  /* Headline */
   h1 {
     font-size: 2em;
-    margin-bottom: 0.5em;
-    margin-top: 0;
-    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 20%;
+    left: 10%;
   }
 
-  hr {
-    width: 60px;
-    border: none;
-    border-top: 2px solid #fff;
-    margin: 1em auto;
-  }
-
-  .about {
-    font-style: italic;
+  /* Email and Location */
+  .email {
+    position: absolute;
+    top: 25%;
+    left: 10%;
     font-size: 0.9em;
-    max-width: 500px; /* narrower width */
-    margin: 1em auto;
-    line-height: 1.4em;
-    text-align: center;
   }
-  .writings-link {
+
+  .location {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    font-size: 0.5em;
-    color: #fff;
-    text-decoration: none;
+    top: 28%;
+    left: 10%;
+    font-size: 0.8em;
+    color: #555; /* Slightly lighter black/gray */
   }
 
-  .writings-link:hover {
-    text-decoration: underline;
-    text-decoration: grow;
-  }
-
-  .bottom-right-nav {
+  /* Bio text */
+  .bio {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
-    text-align: right;
+    top: 32%;
+    left: 10%;
+    max-width: 500px;
+    font-size: 0.8em;
+    line-height: 1.5em;
   }
 
-  .bottom-right-nav a {
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    margin-bottom: 0.5em;
-    font-size: 0.7em; /* Normal size for these links */
-  }
-
-  .bottom-right-nav a:hover {
+  .bio a {
+    color: #000;
     text-decoration: underline;
-    text-decoration: grow;
-  }
-
-  .bottom-right-nav a.linkedin {
-    font-size: 0.25em; /* LinkedIn at 1/4 size */
   }
 </style>
 </head>
 <body>
-  <h1>Josh Hansan</h1>
-  <hr>
-  <p class="about">
-    Hi, my name is Josh Hansan.
 
-    I am a 28 year old working in the healthcare investments space in New York City.
-
-    
-    My professional focuses include biotech, consumer tech, preventative medicine, longevity, 
-    and pre-clinical assets. 
-    
-    In my spare time, I focus my readings and writings on 
-    socioeconomic policy, American history, Futurism, financial technology, college athletics, 
-    and general health and wellness.
-  </p>
-  
-  <a href="writing.html" class="writings-link">Writings to come</a>
-
-  <div class="bottom-right-nav">
-    <a href="https://twitter.com/joshhansan" target="_blank">twitter</a>
-    <a href="https://instagram.com/josh_hansan" target="_blank">instagram</a>
-    <a href="https://www.linkedin.com/in/josh-hansan-1296a111a/" class="linkedin" target="_blank">linkedIn</a>
-    <a href="https://letterboxd.com/jhansan/" target="_blank">letterboxd</a>
-    <a href="https://www.anchorimpact.com/one-time-contributon" target="_blank">the fellas</a>
+  <!-- Top Nav Links -->
+  <div class="top-nav">
+    <a href="https://twitter.com/joshhansan" target="_blank">[twitter]</a>
+    <a href="https://instagram.com/josh_hansan" target="_blank">[instagram]</a>
+    <a href="https://www.linkedin.com/in/josh-hansan-1296a111a/" target="_blank">[linkedin]</a>
   </div>
+
+  <!-- Headline and Details -->
+  <h1>Josh Hansan</h1>
+  <div class="email">jmhansan@gmail.com</div>
+  <div class="location">New York, NY</div>
+
+  <!-- Bio -->
+  <div class="bio">
+    Hi, my name is Josh Hansan. I work in the healthcare investments / diligence space.<br>
+    My work includes deep dives into the markets across the entire healthcare sector, but my main interests include pre-clinical assets (led by solid tumors + neurodegenerative disorders), consumer health tech, preventative medicine / longevity, payor mechanisms, and provider-centric behavior.<br>
+    In my spare time, I focus my readings and writings on domestic policy programs, American history, Futurism, financial technology, general health and wellness (i.e., extrapolating the results of small single-arm observational trials to my life), and college <a href="https://www.anchorimpact.com/one-time-contributon" target="_blank">athletics</a>.
+  </div>
+
 </body>
 </html>
