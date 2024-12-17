@@ -13,10 +13,15 @@
     font-family: Arial, sans-serif;
   }
 
-  /* Social links at the top */
+  /* Shift all content slightly to the right */
+  .container {
+    margin-left: 50px; /* Adjust this for consistent rightward spacing */
+  }
+
+  /* Top navigation links */
   .top-nav {
-    text-align: center;
-    margin-bottom: 20px;
+    text-align: left;
+    margin-bottom: 40px;
   }
 
   .top-nav a {
@@ -30,39 +35,36 @@
     text-decoration: underline;
   }
 
-  /* Headline */
+  /* Headline and spacing */
   h1 {
     font-size: 2em;
     margin: 0;
-    position: absolute;
-    top: 20%;
-    left: 10%;
+    margin-bottom: 40px; /* Added space below */
   }
 
-  /* Email and Location */
   .email {
-    position: absolute;
-    top: 25%;
-    left: 10%;
     font-size: 0.9em;
+    margin-bottom: 10px; /* Small gap between email and location */
   }
 
   .location {
-    position: absolute;
-    top: 28%;
-    left: 10%;
     font-size: 0.8em;
     color: #555; /* Slightly lighter black/gray */
+    margin-bottom: 30px; /* Added space below location */
   }
 
-  /* Bio text */
+  /* Bio text with more spacing between lines */
   .bio {
-    position: absolute;
-    top: 32%;
-    left: 10%;
     max-width: 500px;
     font-size: 0.8em;
-    line-height: 1.5em;
+    line-height: 1.8em; /* Added line spacing */
+    margin-bottom: 30px;
+  }
+
+  .bio br {
+    margin-bottom: 10px; /* Added space between line breaks */
+    display: block;
+    content: "";
   }
 
   .bio a {
@@ -72,25 +74,26 @@
 </style>
 </head>
 <body>
+  <!-- Top Navigation Links -->
+  <div class="container">
+    <div class="top-nav">
+      <a href="https://twitter.com/joshhansan" target="_blank">[twitter]</a>
+      <a href="https://instagram.com/josh_hansan" target="_blank">[instagram]</a>
+      <a href="https://www.linkedin.com/in/josh-hansan-1296a111a/" target="_blank">[linkedin]</a>
+      <a href="writings.html">[writing]</a>
+    </div>
 
-  <!-- Top Nav Links -->
-  <div class="top-nav">
-    <a href="https://twitter.com/joshhansan" target="_blank">[twitter]</a>
-    <a href="https://instagram.com/josh_hansan" target="_blank">[instagram]</a>
-    <a href="https://www.linkedin.com/in/josh-hansan-1296a111a/" target="_blank">[linkedin]</a>
+    <!-- Headline and Details -->
+    <h1>Josh Hansan</h1>
+    <div class="email">jmhansan@gmail.com</div>
+    <div class="location">New York, NY</div>
+
+    <!-- Bio -->
+    <div class="bio">
+      Hi, my name is Josh Hansan. I work in the healthcare investments / diligence space.<br><br>
+      My work includes deep dives into the markets across the entire healthcare sector, but my main interests include pre-clinical assets (led by solid tumors + neurogenetic diseases), consumer health tech, preventative medicine / longevity, payor mechanisms, and provider-centric behavior.<br><br>
+      In my spare time, I focus my readings and writings on domestic policy programs, American history, Futurism, financial technology, general health and wellness (i.e., extrapolating the results of small single-arm observational trials to my life), and college <a href="https://www.anchorimpact.com/one-time-contributon" target="_blank">athletics</a>.
+    </div>
   </div>
-
-  <!-- Headline and Details -->
-  <h1>Josh Hansan</h1>
-  <div class="email">jmhansan@gmail.com</div>
-  <div class="location">New York, NY</div>
-
-  <!-- Bio -->
-  <div class="bio">
-    Hi, my name is Josh Hansan. I work in the healthcare investments / diligence space.<br>
-    My work includes deep dives into the markets across the entire healthcare sector, but my main interests include pre-clinical assets (led by solid tumors + neurodegenerative disorders), consumer health tech, preventative medicine / longevity, payor mechanisms, and provider-centric behavior.<br>
-    In my spare time, I focus my readings and writings on domestic policy programs, American history, Futurism, financial technology, general health and wellness (i.e., extrapolating the results of small single-arm observational trials to my life), and college <a href="https://www.anchorimpact.com/one-time-contributon" target="_blank">athletics</a>.
-  </div>
-
 </body>
 </html>
