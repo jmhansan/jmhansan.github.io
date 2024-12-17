@@ -25,7 +25,7 @@
   }
 
   .top-nav a {
-    color: #000; /* Black links */
+    color: #000;
     text-decoration: none;
     margin: 0 10px;
     font-size: 1em;
@@ -35,22 +35,27 @@
     text-decoration: underline;
   }
 
+  .dot {
+    margin: 0 5px;
+    color: #555; /* Slightly lighter black */
+  }
+
   /* Headline and spacing */
   h1 {
     font-size: 2em;
     margin: 0;
-    margin-bottom: 40px; /* Added space below */
+    margin-bottom: 20px;
   }
 
   .email {
     font-size: 0.9em;
-    margin-bottom: 10px; /* Small gap between email and location */
+    margin-bottom: 20px; /* Ensures even spacing between email and city */
   }
 
   .location {
     font-size: 0.8em;
     color: #555; /* Slightly lighter black/gray */
-    margin-bottom: 30px; /* Added space below location */
+    margin-bottom: 40px; /* Added space below location */
   }
 
   /* Bio text with more spacing between lines */
@@ -58,7 +63,7 @@
     max-width: 500px;
     font-size: 0.8em;
     line-height: 1.8em; /* Added line spacing */
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
 
   .bio br {
@@ -71,15 +76,36 @@
     color: #000;
     text-decoration: underline;
   }
+
+  /* Bottom links */
+  .bottom-links {
+    text-align: left;
+    margin-top: 20px;
+  }
+
+  .bottom-links a {
+    color: #000;
+    text-decoration: none;
+    font-size: 0.9em;
+  }
+
+  .bottom-links a:hover {
+    text-decoration: underline;
+  }
 </style>
 </head>
 <body>
   <!-- Top Navigation Links -->
   <div class="container">
     <div class="top-nav">
+      <a href="joshhansan.com">[home]</a>
+      <span class="dot">•</span>
       <a href="https://twitter.com/joshhansan" target="_blank">[twitter]</a>
+      <span class="dot">•</span>
       <a href="https://instagram.com/josh_hansan" target="_blank">[instagram]</a>
+      <span class="dot">•</span>
       <a href="https://www.linkedin.com/in/josh-hansan-1296a111a/" target="_blank">[linkedin]</a>
+      <span class="dot">•</span>
       <a href="writings.html">[writing]</a>
     </div>
 
@@ -93,6 +119,15 @@
       Hi, my name is Josh Hansan. I work in the healthcare investments / diligence space.<br><br>
       My work includes deep dives into the markets across the entire healthcare sector, but my main interests include pre-clinical assets (led by solid tumors + neurogenetic diseases), consumer health tech, preventative medicine / longevity, payor mechanisms, and provider-centric behavior.<br><br>
       In my spare time, I focus my readings and writings on domestic policy programs, American history, Futurism, financial technology, general health and wellness (i.e., extrapolating the results of small single-arm observational trials to my life), and college <a href="https://www.anchorimpact.com/one-time-contributon" target="_blank">athletics</a>.
+    </div>
+
+    <!-- Bottom Navigation Links -->
+    <div class="bottom-links">
+      <a href="writings.html">[writing]</a>
+      <span class="dot">•</span>
+      <a href="#">[links]</a>
+      <span class="dot">•</span>
+      <a href="#">[media]</a>
     </div>
   </div>
 </body>
