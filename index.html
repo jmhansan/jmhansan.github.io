@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>josh hansan dot com</title>
+<title>Josh's Website</title>
 <style>
   body {
     margin: 0;
@@ -13,22 +13,23 @@
     font-family: Arial, sans-serif;
   }
 
-  /* Shift all content slightly more to the right */
+  /* Center the content more towards the middle */
   .container {
-    margin-left: 80px; /* Adjusted for consistent rightward spacing */
+    margin: 0 auto;
+    max-width: 700px;
   }
 
   /* Top navigation links */
   .top-nav {
-    text-align: left;
-    margin-bottom: 40px;
+    text-align: center;
+    margin-bottom: 30px;
   }
 
   .top-nav a {
     color: #000;
     text-decoration: none;
     margin: 0 10px;
-    font-size: 0.8em;
+    font-size: 1em;
   }
 
   .top-nav a:hover {
@@ -40,36 +41,48 @@
     color: #555; /* Slightly lighter black */
   }
 
-  /* Headline and spacing */
+  /* Flexbox for Name and Photo */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px; /* Reduced space below */
+  }
+
+  .header img {
+    width: 120px; /* Adjust size as needed */
+    height: auto;
+    margin-left: 20px;
+    border-radius: 10px; /* Slightly rounded edges */
+  }
+
   h1 {
     font-size: 2em;
     margin: 0;
-    margin-bottom: 40px; /* Space below headline */
   }
 
   .email {
     font-size: 0.9em;
-    margin-bottom: 20px; /* Space between email and city */
+    margin: 5px 0; /* Reduced spacing */
   }
 
   .location {
     font-size: 0.8em;
-    color: #555; /* Slightly lighter black/gray */
-    margin-bottom: 40px; /* Space below location */
+    color: #555; /* Slightly lighter gray */
+    margin-bottom: 20px; /* Space below */
   }
 
-  /* Bio text with spacing */
+  /* Bio text */
   .bio {
     max-width: 500px;
     font-size: 0.8em;
-    line-height: 1.8em; /* Added line spacing */
-    margin-bottom: 40px;
+    line-height: 1.8em;
+    margin-bottom: 20px;
   }
 
   .bio br {
-    margin-bottom: 10px; /* Space between line breaks */
     display: block;
-    content: "";
+    margin-bottom: 10px;
   }
 
   .bio a {
@@ -77,17 +90,17 @@
     text-decoration: underline;
   }
 
-  /* Bottom links: Right-aligned */
+  /* Bottom navigation links */
   .bottom-links {
-    text-align: right;
-    margin-right: 80px; /* Align with the right side of the text */
+    text-align: center;
     margin-top: 20px;
   }
 
   .bottom-links a {
     color: #000;
     text-decoration: none;
-    font-size: 0.8em;
+    font-size: 1em;
+    margin: 0 10px;
   }
 
   .bottom-links a:hover {
@@ -101,35 +114,38 @@
     <div class="top-nav">
       <a href="joshhansan.com">[home]</a>
       <span class="dot">•</span>
+      <a href="writings.html">[writing]</a>
+      <span class="dot">•</span>
+      <a href="#">[links]</a>
+      <span class="dot">•</span>
+      <a href="#">[media]</a>
+    </div>
+
+    <!-- Header: Name and Photo -->
+    <div class="header">
+      <div>
+        <h1>Josh Hansan</h1>
+        <div class="email">jmhansan@gmail.com</div>
+        <div class="location">New York, NY</div>
+      </div>
+      <img src="profile.jpg" alt="Josh Hansan Photo">
+    </div>
+
+    <!-- Bio Section -->
+    <div class="bio">
+      Hi, my name is Josh Hansan. I work in the healthcare investments / diligence space.<br><br>
+      My work includes deep dives into the markets across the entire healthcare sector, but my main interests are pre-clinical assets (led by solid tumors + neurodegenerative diseases), consumer health tech, preventative medicine / longevity, payor mechanisms, and provider-centric behavior.<br><br>
+      In my spare time, I focus my readings and writings on domestic policy programs, American history, futurism, financial technology, general health and wellness (i.e., poorly extrapolating the results of small single-arm observational trials to my life), and college <a href="https://www.anchorimpact.com/one-time-contributon" target="_blank">athletics</a>.
+    </div>
+
+    <!-- Bottom Navigation Links -->
+    <div class="bottom-links">
       <a href="https://twitter.com/joshhansan" target="_blank">[twitter]</a>
       <span class="dot">•</span>
       <a href="https://instagram.com/josh_hansan" target="_blank">[instagram]</a>
       <span class="dot">•</span>
       <a href="https://www.linkedin.com/in/josh-hansan-1296a111a/" target="_blank">[linkedin]</a>
-      <span class="dot">•</span>
-      <a href="writings.html">[writing]</a>
     </div>
-
-    <!-- Headline and Details -->
-    <h1>Josh Hansan</h1>
-    <div class="email">jmhansan@gmail.com</div>
-    <div class="location">New York, NY</div>
-
-    <!-- Bio -->
-    <div class="bio">
-      Hi, my name is Josh Hansan. I work in the healthcare investments / diligence space.<br><br>
-      My work includes deep dives into the markets across the entire healthcare sector, but my main interests are pre-clinical assets (led by solid tumors + neurogenetic diseases), consumer health tech, preventative medicine / longevity, payor mechanisms, and provider-centric behavior.<br><br>
-      In my spare time, I focus my readings and writings on domestic policy programs, American history, futurism, financial technology, general health and wellness (i.e., poorly extrapolating the results of small single-arm observational trials to my life), and college <a href="https://www.anchorimpact.com/one-time-contributon" target="_blank">athletics</a>.
-    </div>
-  </div>
-
-  <!-- Bottom Navigation Links -->
-  <div class="bottom-links">
-    <a href="writings.html">[writing]</a>
-    <span class="dot">•</span>
-    <a href="#">[links]</a>
-    <span class="dot">•</span>
-    <a href="#">[media]</a>
   </div>
 </body>
 </html>
