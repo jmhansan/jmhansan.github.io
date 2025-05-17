@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Writing</title>
+<title>Writings</title>
 <style>
   body {
     margin: 0;
@@ -15,6 +15,28 @@
   .container {
     max-width: 700px;
     margin: 0 auto;
+    padding-left: 20px;
+  }
+
+  .top-nav {
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  .top-nav a {
+    color: #000;
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 0.9em;
+  }
+
+  .top-nav a:hover {
+    text-decoration: underline;
+  }
+
+  .dot {
+    margin: 0 3px;
+    color: #000;
   }
   h1 {
     font-size: 1.5em;
@@ -22,26 +44,61 @@
   ul {
     list-style-type: none;
     padding-left: 0;
+    font-size: 0.8em;
   }
   li {
     margin-bottom: 10px;
   }
-  a {
-    color: #000;
+  .writing-list a {
+    color: blue;
     text-decoration: none;
   }
-  a:hover {
+  .writing-list a:hover {
+    text-decoration: underline;
+  }
+
+  .bottom-links {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .bottom-links a {
+    color: #000;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin: 0 8px;
+  }
+
+  .bottom-links a:hover {
     text-decoration: underline;
   }
 </style>
 </head>
 <body>
   <div class="container">
-    <h1>Writing</h1>
-    <ul>
+    <div class="top-nav">
+      <a href="joshhansan.com">[home]</a>
+      <span class="dot">•</span>
+      <a href="writing.html">[writing]</a>
+      <span class="dot">•</span>
+      <a href="https://goodreads.com/user/show/128580088" target="_blank">[books]</a>
+      <span class="dot">•</span>
+      <a href="#">[media]</a>
+    </div>
+
+    <h1>Writings</h1>
+    <ul class="writing-list">
       <li><a href="BioSecure Act White Paper.pdf" target="_blank">BioSecure Act White Paper</a></li>
       <li><a href="plain_text.html">Plain Text</a></li>
     </ul>
+
+    <div class="bottom-links">
+      <a href="https://twitter.com/joshhansan" target="_blank">[twitter]</a>
+      <span class="dot">•</span>
+      <a href="https://instagram.com/josh_hansan" target="_blank">[instagram]</a>
+      <span class="dot">•</span>
+      <a href="https://www.linkedin.com/in/josh-hansan-1296a111a/" target="_blank">[linkedin]</a>
+    </div>
   </div>
 </body>
 </html>
