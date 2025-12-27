@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Plain Text</title>
+<title>Simple Text Editor</title>
 <script>
   // Apply dark mode immediately to prevent flash
   (function() {
@@ -28,7 +28,7 @@
     font-family: Arial, sans-serif;
   }
   .container {
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto;
     padding-left: 20px;
   }
@@ -54,14 +54,108 @@
     color: #000;
   }
 
-  pre {
-    white-space: pre-wrap;
-    word-wrap: break-word;
+  h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  /* Text Editor Styles */
+  .editor-container {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .toolbar {
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background: #f9f9f9;
+    flex-wrap: wrap;
+  }
+
+  .toolbar button {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 3px;
+    transition: background 0.2s;
+  }
+
+  .toolbar button:hover {
+    background: #f0f0f0;
+  }
+
+  .toolbar button.active {
+    background: #e0e0e0;
+  }
+
+  .editor-content {
+    min-height: 400px;
+    padding: 20px;
+    outline: none;
+    font-size: 1em;
+    line-height: 1.6;
+    color: #000;
+  }
+
+  .editor-content:focus {
+    outline: none;
+  }
+
+  .editor-content a {
+    color: #0066cc;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .editor-content a:hover {
+    color: #004499;
+  }
+
+  .editor-content sup.footnote {
+    vertical-align: super;
+    font-size: 0.8em;
+    line-height: 0;
+    position: relative;
+    top: -0.4em;
+  }
+
+  .save-button {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 20px;
+    transition: background 0.2s;
+  }
+
+  .save-button:hover {
+    background: #333;
+  }
+
+  .save-button:active {
+    background: #555;
+  }
+
+  .save-status {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #666;
+    text-align: center;
   }
 
   .bottom-links {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
   }
 
   .bottom-links a {
@@ -175,8 +269,62 @@
     color: #fff;
   }
 
-  body.dark-mode pre {
+  body.dark-mode h1 {
     color: #fff;
+  }
+
+  body.dark-mode .editor-container {
+    background: #2a2a2a;
+    border-color: #444;
+  }
+
+  body.dark-mode .toolbar {
+    background: #333;
+    border-color: #444;
+  }
+
+  body.dark-mode .toolbar button {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #fff;
+  }
+
+  body.dark-mode .toolbar button:hover {
+    background: #3a3a3a;
+  }
+
+  body.dark-mode .toolbar button.active {
+    background: #4a4a4a;
+  }
+
+  body.dark-mode .editor-content {
+    background: #2a2a2a;
+    color: #fff;
+  }
+
+  body.dark-mode .editor-content a {
+    color: #87ceeb;
+  }
+
+  body.dark-mode .editor-content a:hover {
+    color: #b0e0ff;
+  }
+
+  body.dark-mode .editor-content sup.footnote {
+    color: #fff;
+  }
+
+  body.dark-mode .save-button {
+    background: #fff;
+    color: #000;
+  }
+
+  body.dark-mode .save-button:hover {
+    background: #e0e0e0;
+  }
+
+  body.dark-mode .save-status {
+    color: #ccc;
   }
 </style>
 </head>
@@ -190,11 +338,32 @@
       <a href="media.html">[media]</a>
     </div>
 
-    <pre>
-    </pre>
+    <h1>Simple Text Editor</h1>
+
+    <div class="editor-container">
+      <div class="toolbar">
+        <button type="button" onclick="formatText('bold')" title="Bold"><b>B</b></button>
+        <button type="button" onclick="formatText('italic')" title="Italic"><i>I</i></button>
+        <button type="button" onclick="formatText('underline')" title="Underline"><u>U</u></button>
+        <button type="button" onclick="formatText('strikeThrough')" title="Strikethrough"><s>S</s></button>
+        <button type="button" id="bulletBtn" onclick="formatText('insertUnorderedList')" title="Bullet Points">• List</button>
+        <button type="button" onclick="insertLink()" title="Insert Link">🔗 Link</button>
+        <button type="button" onclick="toggleSuperscript()" title="Superscript (⌘⇧+)">¹ Superscript</button>
+        <span style="margin: 0 5px; color: #999;">|</span>
+        <button type="button" onclick="setFontSize('small')" title="Small Font">Small</button>
+        <button type="button" onclick="setFontSize('normal')" title="Normal Font">Normal</button>
+        <button type="button" onclick="setFontSize('large')" title="Large Font">Large</button>
+      </div>
+      <div class="editor-content" id="editor" contenteditable="true"></div>
+    </div>
+
+    <div style="text-align: center;">
+      <button class="save-button" onclick="saveDocument()">Save</button>
+      <div class="save-status" id="saveStatus"></div>
+    </div>
 
     <div class="bottom-links">
-      <a href="https://twitter.com/joshhansan" target="_blank">[twitter]</a>
+      <a href="https://twitter.com/joshhansxn" target="_blank">[twitter]</a>
       <span class="dot">•</span>
       <a href="https://instagram.com/josh_hansan" target="_blank">[instagram]</a>
       <span class="dot">•</span>
@@ -212,6 +381,204 @@
   </div>
 
   <script>
+    // Load saved content on page load
+    window.addEventListener('DOMContentLoaded', function() {
+      const savedContent = localStorage.getItem('textEditorContent');
+      if (savedContent) {
+        editor.innerHTML = savedContent;
+        // Make all existing links clickable
+        makeLinksClickable();
+      }
+    });
+
+
+    // Function to make all links in editor clickable
+    function makeLinksClickable() {
+      const links = editor.querySelectorAll('a');
+      links.forEach(link => {
+        if (link.href) {
+          link.style.cursor = 'pointer';
+          link.style.color = '#0066cc';
+          link.style.textDecoration = 'underline';
+          if (!link.getAttribute('target')) {
+            link.setAttribute('target', '_blank');
+          }
+        }
+      });
+    }
+
+    // Autosave functionality
+    let autosaveTimer;
+    const editor = document.getElementById('editor');
+    
+    editor.addEventListener('input', function() {
+      clearTimeout(autosaveTimer);
+      autosaveTimer = setTimeout(function() {
+        const content = editor.innerHTML;
+        localStorage.setItem('textEditorContent', content);
+        updateSaveStatus('Autosaved', true);
+      }, 1000); // Autosave after 1 second of inactivity
+    });
+
+    // Format text functions
+    function formatText(command) {
+      document.execCommand(command, false, null);
+      editor.focus();
+      updateToolbarButtons();
+    }
+
+    function insertLink() {
+      const url = prompt('Enter URL:');
+      if (url) {
+        // Ensure URL has protocol
+        let fullUrl = url;
+        if (!url.match(/^https?:\/\//i)) {
+          fullUrl = 'https://' + url;
+        }
+        document.execCommand('createLink', false, fullUrl);
+        
+        // Make sure the link is clickable
+        setTimeout(function() {
+          const links = editor.querySelectorAll('a');
+          links.forEach(link => {
+            if (link.href === fullUrl || link.href === url) {
+              link.setAttribute('href', fullUrl);
+              link.setAttribute('target', '_blank');
+              link.style.cursor = 'pointer';
+              link.style.color = '#0066cc';
+              link.style.textDecoration = 'underline';
+            }
+          });
+        }, 10);
+        editor.focus();
+      }
+    }
+
+    // Make links clickable in the editor
+    editor.addEventListener('click', function(e) {
+      const target = e.target;
+      if (target.tagName === 'A' && target.href) {
+        e.preventDefault();
+        window.open(target.href, target.getAttribute('target') || '_blank');
+      }
+    });
+
+    // Superscript functionality (for footnotes)
+    function toggleSuperscript() {
+      document.execCommand('superscript', false, null);
+      editor.focus();
+      updateToolbarButtons();
+    }
+
+    // Font size functionality
+    function setFontSize(size) {
+      const sizes = {
+        'small': '0.75em',
+        'normal': '1em',
+        'large': '1.5em'
+      };
+      
+      if (sizes[size]) {
+        const selection = window.getSelection();
+        if (selection.rangeCount > 0) {
+          const range = selection.getRangeAt(0);
+          
+          if (!range.collapsed) {
+            // Text is selected - wrap it in a span with the font size
+            const span = document.createElement('span');
+            span.style.fontSize = sizes[size];
+            try {
+              range.surroundContents(span);
+            } catch (e) {
+              // If surroundContents fails, extract and wrap
+              const contents = range.extractContents();
+              span.appendChild(contents);
+              range.insertNode(span);
+            }
+          } else {
+            // No selection - create a span for future typing
+            const span = document.createElement('span');
+            span.style.fontSize = sizes[size];
+            span.innerHTML = '\u200B'; // Zero-width space to make span visible
+            range.insertNode(span);
+            range.setStart(span, 1);
+            range.collapse(true);
+            selection.removeAllRanges();
+            selection.addRange(range);
+          }
+        }
+      }
+      editor.focus();
+    }
+
+    // Keyboard shortcuts for superscript
+    editor.addEventListener('keydown', function(e) {
+      // Command+Shift+= (or Ctrl+Shift+=) to toggle superscript ON
+      if ((e.metaKey || e.ctrlKey) && e.shiftKey && (e.key === '=' || e.key === '+')) {
+        e.preventDefault();
+        toggleSuperscript();
+      }
+      // Command+Shift+- (or Ctrl+Shift+-) to remove superscript (return to regular font)
+      if ((e.metaKey || e.ctrlKey) && e.shiftKey && (e.key === '-' || e.key === '_')) {
+        e.preventDefault();
+        // Remove superscript if it's active
+        if (document.queryCommandState('superscript')) {
+          document.execCommand('superscript', false, null);
+          editor.focus();
+          updateToolbarButtons();
+        }
+      }
+    });
+
+    function updateToolbarButtons() {
+      const buttons = document.querySelectorAll('.toolbar button');
+      buttons.forEach(button => {
+        const command = button.getAttribute('onclick');
+        if (command) {
+          if (command.includes('bold')) {
+            button.classList.toggle('active', document.queryCommandState('bold'));
+          } else if (command.includes('italic')) {
+            button.classList.toggle('active', document.queryCommandState('italic'));
+          } else if (command.includes('underline')) {
+            button.classList.toggle('active', document.queryCommandState('underline'));
+          } else if (command.includes('strikeThrough')) {
+            button.classList.toggle('active', document.queryCommandState('strikeThrough'));
+          } else if (command.includes('insertUnorderedList')) {
+            button.classList.toggle('active', document.queryCommandState('insertUnorderedList'));
+          } else if (command.includes('toggleSuperscript')) {
+            button.classList.toggle('active', document.queryCommandState('superscript'));
+          }
+        }
+      });
+    }
+
+    // Update toolbar buttons on selection change
+    editor.addEventListener('mouseup', updateToolbarButtons);
+    editor.addEventListener('keyup', updateToolbarButtons);
+
+    // Save document function
+    function saveDocument() {
+      const content = editor.innerHTML;
+      localStorage.setItem('textEditorContent', content);
+      updateSaveStatus('Saved!', false);
+      setTimeout(function() {
+        updateSaveStatus('', false);
+      }, 2000);
+    }
+
+    function updateSaveStatus(message, isAutosave) {
+      const statusEl = document.getElementById('saveStatus');
+      if (message) {
+        statusEl.textContent = message;
+        statusEl.style.color = isAutosave ? '#666' : '#4CAF50';
+        if (document.body.classList.contains('dark-mode')) {
+          statusEl.style.color = isAutosave ? '#ccc' : '#4CAF50';
+        }
+      } else {
+        statusEl.textContent = '';
+      }
+    }
+
     // Dark mode functionality
     const darkModeToggle = document.getElementById('darkModeToggle');
     const body = document.body;
