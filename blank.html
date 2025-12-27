@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Writings</title>
+<title>Blank</title>
 <script>
   // Apply dark mode immediately to prevent flash
   (function() {
@@ -53,23 +53,29 @@
     margin: 0 3px;
     color: #000;
   }
+
   h1 {
     font-size: 1.5em;
+    margin-bottom: 20px;
   }
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-    font-size: 0.8em;
+
+  .content {
+    line-height: 1.7;
+    font-size: 0.95em;
+    margin-bottom: 30px;
   }
-  li {
-    margin-bottom: 10px;
+
+  .content p {
+    margin-bottom: 15px;
   }
-  .writing-list a {
-    color: blue;
-    text-decoration: none;
-  }
-  .writing-list a:hover {
+
+  .content a {
+    color: #0066cc;
     text-decoration: underline;
+  }
+
+  .content a:hover {
+    color: #004499;
   }
 
   .bottom-links {
@@ -184,16 +190,36 @@
     color: #87ceeb;
   }
 
-  body.dark-mode .writing-list a {
-    color: #87ceeb;
-  }
-
   body.dark-mode .dark-mode-toggle label {
     color: #fff;
   }
 
   body.dark-mode h1 {
     color: #fff;
+  }
+
+  body.dark-mode .content {
+    color: #fff;
+  }
+
+  body.dark-mode .content p {
+    color: #fff;
+  }
+
+  body.dark-mode .content ul {
+    color: #fff;
+  }
+
+  body.dark-mode .content li {
+    color: #fff;
+  }
+
+  body.dark-mode .content a {
+    color: #87ceeb;
+  }
+
+  body.dark-mode .content a:hover {
+    color: #b0e0ff;
   }
 </style>
 </head>
@@ -207,13 +233,46 @@
       <a href="media.html">[media]</a>
     </div>
 
-    <h1>Writings</h1>
-    <ul class="writing-list">
-      <li><a href="BioSecure Act White Paper.pdf" target="_blank">BioSecure Act White Paper</a></li>
-      <li><a href="blank.html">Blank</a></li>
-      <li><a href="plain_text.html">Simple Text Editor</a></li>
-    </ul>
+    <h1>The Absolute Bottom Of The Technical Ladder Personal Website Build</h1>
+    <div class="content">
+      <p style="font-size: 0.9em; color: #666; margin-bottom: 20px;">December 27th, 2025</p>
 
+      <p>It's worth mentioning I am fully, acutely, devastatingly aware of the chasm that exists right now between those engaging with (and working on) frontier models and the rest of the population (which I should note includes most of the well-educated white collar workers in any major city outside of SF). I really don't believe the latter has a firm grasp on just how far behind they are. I am not sure there is anything that can be done, especially when those on the front lines feel the same <a href="https://x.com/karpathy/status/2004607146781278521" target="_blank">way</a></p>
+
+      <p>I am non-technical. I bear this burden as a Scarlet A on my chest with the requisite shame and self-loathing, but it is mine all the same. A decade ago when I took CS 1101 at Vanderbilt, I was determined to change that. Four months and only due to the kindness of my friend, James ($MSFT SWE, TC a lot), I limped out of there alive and, guess what, non-technical for life.</p>
+
+      <p>It took ten years, hundreds of billions of dollars, and warnings about the rise of The Machine God, but I now have the tools at my disposal to shape products, minds, and the world in the way of my choosing. I chose first to make a simple personal website a little faster than it previously would have taken me.</p>
+
+      <p>I work in a world (and socialize among people) that do not build personal websites (for the <a href="https://www.michaelhansan.com/bowling" target="_blank">most</a> part). As a result, I have always taken a keen interest in their development and delighted in their quirks. The site you see before you is in Hour Two of its development.</p>
+
+      <p>Finally, if you have a personal website or any favorites come to mind, please send them along.</p>
+
+      <p><strong>Note:</strong> there are several personal website tools available that would standardize much of this process into formats and templates. I use none of these, as the exercise is (was) largely meant to serve as my introduction to the tools required.</p>
+
+      <p><strong>Tools / Resources:</strong></p>
+      <div style="margin-bottom: 15px;">
+        <p style="margin-bottom: 10px;"><strong>Cursor</strong></p>
+        <ul style="list-style-type: disc; padding-left: 20px; margin-bottom: 15px;">
+          <li style="margin-bottom: 10px;">Primary coding engine. Operate in the "Editor" view by instructing commands, constructing the specific site builds, reviewing outputs (as if I understand more than 5% of the output), and committing changes (note: when you press commit, and "COMMIT_EDITMSG comes up, you need to enter a description of the change, save, and then close the tab. They don't tell you this in CS 1101)</li>
+        </ul>
+        <p style="margin-bottom: 10px;"><strong>GitHub</strong></p>
+        <ul style="list-style-type: disc; padding-left: 20px; margin-bottom: 15px;">
+          <li style="margin-bottom: 10px;">Remote repository that stores the website's code and deploys updates to the live site when changes are pushed</li>
+        </ul>
+        <p style="margin-bottom: 10px;"><strong>Git</strong></p>
+        <ul style="list-style-type: disc; padding-left: 20px; margin-bottom: 15px;">
+          <li style="margin-bottom: 10px;">Local version-control system that tracks changes to the site and pushes updates from my computer to GitHub</li>
+        </ul>
+        <p style="margin-bottom: 10px;"><strong>Namecheap</strong></p>
+        <ul style="list-style-type: disc; padding-left: 20px; margin-bottom: 15px;">
+          <li style="margin-bottom: 10px;">Site name purchase, DNS host, manual connection to Github</li>
+        </ul>
+        <p style="margin-bottom: 10px;"><strong>ChatGPT</strong></p>
+        <ul style="list-style-type: disc; padding-left: 20px; margin-bottom: 15px;">
+          <li style="margin-bottom: 10px;">Instruction manual on how to setup all of the above (new project on Github, purchasing a domain, setting up the DNS and hosting, connecting Github to Cursor, running a local window snapshot of the site via a Live Server)</li>
+        </ul>
+      </div>
+    </div>
     <div class="bottom-links">
       <a href="https://twitter.com/joshhansxn" target="_blank">[twitter]</a>
       <span class="dot">•</span>
@@ -267,3 +326,4 @@
   </script>
 </body>
 </html>
+
