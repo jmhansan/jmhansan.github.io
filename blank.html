@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Winter 2025 - Personal Website Build</title>
+<script>
+  // Apply dark mode immediately to prevent flash
+  (function() {
+    const isDarkMode = localStorage.getItem('darkMode') !== 'false';
+    const html = document.documentElement;
+    if (isDarkMode) {
+      html.style.backgroundColor = '#1a1a1a';
+      html.classList.add('dark-mode');
+      document.body.classList.add('dark-mode');
+    } else {
+      html.style.backgroundColor = '#F0F0F0';
+      html.classList.remove('dark-mode');
+    }
+  })();
+</script>
+<style>
+  body {
+    margin: 0;
+    padding: 30px;
+    background: #F0F0F0;
+    color: #000;
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 20px;
+  }
+
+  .top-nav {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .top-nav a {
+    color: #000;
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 0.9em;
+  }
+
+  .top-nav a:hover {
+    text-decoration: underline;
+  }
+
+  .dot {
+    margin: 0 3px;
+    color: #000;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  .content {
+    line-height: 1.7;
+    font-size: 0.95em;
+    margin-bottom: 30px;
+  }
+
+  .content p {
+    margin-bottom: 15px;
+  }
+
+  .content a {
+    color: #0066cc;
+    text-decoration: underline;
+  }
+
+  .content a:hover {
+    color: #004499;
+  }
+
+  .bottom-links {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .bottom-links a {
+    color: #000;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin: 0 8px;
+  }
+
+  .bottom-links a:hover {
+    text-decoration: underline;
+  }
+
+  /* Dark mode toggle */
+  .dark-mode-toggle {
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .dark-mode-toggle label {
+    font-size: 0.9em;
+    color: #000;
+    cursor: pointer;
+  }
+
+  .toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+  }
+
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 26px;
+  }
+
+  .toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .toggle-switch input:checked + .toggle-slider {
+    background-color: #666;
+  }
+
+  .toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(24px);
+  }
+
+  /* Dark mode styles */
+  html {
+    background: #F0F0F0;
+    min-height: 100%;
+  }
+
+  html.dark-mode {
+    background: #1a1a1a;
+  }
+
+  body.dark-mode {
+    background: #1a1a1a;
+    color: #fff;
+  }
+
+  body.dark-mode .top-nav a {
+    color: #fff;
+  }
+
+  body.dark-mode .top-nav a:hover {
+    color: #87ceeb;
+  }
+
+  body.dark-mode .dot {
+    color: #fff;
+  }
+
+  body.dark-mode .bottom-links a {
+    color: #fff;
+  }
+
+  body.dark-mode .bottom-links a:hover {
+    color: #87ceeb;
+  }
+
+  body.dark-mode .dark-mode-toggle label {
+    color: #fff;
+  }
+
+  body.dark-mode h1 {
+    color: #fff;
+  }
+
+  body.dark-mode .content {
+    color: #fff;
+  }
+
+  body.dark-mode .content p {
+    color: #fff;
+  }
+
+  body.dark-mode .content ul {
+    color: #fff;
+  }
+
+  body.dark-mode .content li {
+    color: #fff;
+  }
+
+  body.dark-mode .content a {
+    color: #87ceeb;
+  }
+
+  body.dark-mode .content a:hover {
+    color: #b0e0ff;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-nav">
+      <a href="index.html">[home]</a>
+      <span class="dot">•</span>
+      <a href="writing.html">[writing]</a>
+      <span class="dot">•</span>
+      <a href="media.html">[media]</a>
+    </div>
+
+    <h1>The Absolute Bottom Of The Technical Ladder Personal Website Build</h1>
+    <div class="content">
+      <p style="font-size: 0.9em; color: #666; margin-bottom: 20px;">December 27th, 2025</p>
+
+      <p style="font-style: italic; font-size: 0.8em;"><em>It's worth mentioning I am fully, acutely, devastatingly aware of the chasm that exists right now between those engaging with (and working on) frontier models and the rest of the population (which I should note includes most of the well-educated white collar workers in any major city outside of SF). I really don't believe the latter has a firm grasp on just how far behind they are. I am not sure there is anything that can be done, especially when those on the front lines feel the same <a href="https://x.com/karpathy/status/2004607146781278521" target="_blank">way</a></em></p>
+
+      <p>I am non-technical. I bear this burden like one would a Scarlet A on their chest with the requisite shame and self-loathing. When I took CS 1101 at Vanderbilt a decade ago, I was determined to change that. Four months later, I remained non-technical. It was only due to the kindness and patience of my friend, James ($MSFT SWE, TC: a lot), that I and my GPA limped out of there alive.</p>
+
+      <p>It took ten years, hundreds of billions of dollars, and warnings about the rise of The Machine God, but I now have the tools at my disposal to shape products, minds, and the world in the way of my choosing. I chose first to make a simple personal website a little faster than it previously would have taken me.</p>
+
+      <p>I work in a world (and socialize with folks) that do not build personal websites (for the <a href="https://www.michaelhansan.com/bowling" target="_blank">most</a> part). As a result, I have always taken a keen interest in their development and delighted in their quirks. This is my forray into that space, and the site you see before you is in Hour Two of its development.</p>
+
+      <p>The site will evolve over time and I am actively seeking inspiration. If you have a personal website or any favorites come to mind, please send them along.</p>
+
+      <p><strong>Note:</strong> there are several personal website tools available that would standardize much of this process into formats and templates. I use none of these, as the exercise is (was) largely meant to serve as my introduction to the tools required.</p>
+
+      <p><strong>Tools / Resources:</strong></p>
+      <div style="margin-bottom: 15px;">
+        <p style="margin-bottom: 10px;"><strong>Cursor</strong></p>
+        <ul style="list-style-type: disc; padding-left: 20px; margin-bottom: 15px;">
+          <li style="margin-bottom: 10px;">Primary coding engine. Operate in the "Editor" view by instructing commands, constructing the specific site builds, reviewing outputs (as if I understand more than 5% of the output), and committing changes (note: when you press commit, and "COMMIT_EDITMSG comes up, you need to enter a description of the change, save, and then close the tab. They don't tell you this in CS 1101)</li>
+        </ul>
+        <p style="margin-bottom: 10px;"><strong>GitHub</strong></p>
+        <ul style="list-style-type: disc; padding-left: 20px; margin-bottom: 15px;">
+          <li style="margin-bottom: 10px;">Remote repository that stores the website's code and deploys updates to the live site when changes are pushed</li>
+        </ul>
+        <p style="margin-bottom: 10px;"><strong>Git</strong></p>
+        <ul style="list-style-type: disc; padding-left: 20px; margin-bottom: 15px;">
+          <li style="margin-bottom: 10px;">Local version-control system that tracks changes to the site and pushes updates from my computer to GitHub</li>
+        </ul>
+        <p style="margin-bottom: 10px;"><strong>Namecheap</strong></p>
+        <ul style="list-style-type: disc; padding-left: 20px; margin-bottom: 15px;">
+          <li style="margin-bottom: 10px;">Site name purchase, DNS host, manual connection to Github</li>
+        </ul>
+        <p style="margin-bottom: 10px;"><strong>ChatGPT</strong></p>
+        <ul style="list-style-type: disc; padding-left: 20px; margin-bottom: 15px;">
+          <li style="margin-bottom: 10px;">Instruction manual on how to setup all of the above (new project on Github, purchasing a domain, setting up the DNS and hosting, connecting Github to Cursor, running a local window snapshot of the site via a Live Server)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-links">
+      <a href="https://twitter.com/joshhansxn" target="_blank">[twitter]</a>
+      <span class="dot">•</span>
+      <a href="https://instagram.com/josh_hansan" target="_blank">[instagram]</a>
+      <span class="dot">•</span>
+      <a href="https://www.linkedin.com/in/josh-hansan-1296a111a/" target="_blank">[linkedin]</a>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+      <label for="darkModeToggle">Dark Mode</label>
+      <label class="toggle-switch">
+        <input type="checkbox" id="darkModeToggle" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <script>
+    // Dark mode functionality
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const html = document.documentElement;
+
+    // Check localStorage or default to dark mode (on)
+    const isDarkMode = localStorage.getItem('darkMode') !== 'false';
+    
+    if (isDarkMode) {
+      html.style.backgroundColor = '#1a1a1a';
+      html.classList.add('dark-mode');
+      body.classList.add('dark-mode');
+      darkModeToggle.checked = true;
+    } else {
+      html.style.backgroundColor = '#F0F0F0';
+      html.classList.remove('dark-mode');
+    }
+
+    darkModeToggle.addEventListener('change', function() {
+      if (this.checked) {
+        html.style.backgroundColor = '#1a1a1a';
+        html.classList.add('dark-mode');
+        body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'true');
+      } else {
+        html.style.backgroundColor = '#F0F0F0';
+        html.classList.remove('dark-mode');
+        body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', 'false');
+      }
+    });
+  </script>
+</body>
+</html>
+
