@@ -91,7 +91,7 @@
   /* Bio text */
   .bio {
     max-width: 500px;
-    font-size: 0.8em;
+    font-size: 0.95em;
     line-height: 1.7em; /* Increased line spacing */
     margin-bottom: 20px;
   }
@@ -177,7 +177,7 @@
   }
 
   .toggle-switch input:checked + .toggle-slider {
-    background-color: #4CAF50;
+    background-color: #666;
   }
 
   .toggle-switch input:checked + .toggle-slider:before {
@@ -259,9 +259,9 @@
 
     <!-- Bio Section -->
     <div class="bio">
-      Hi, my name is Josh Hansan. I work in the healthcare investments / diligence space.<br>
-      My work includes deep dives into the markets across the entire healthcare sector, but my main interests are pre-clinical assets (led by solid tumors + neurodegenerative diseases), consumer health tech, preventative medicine / longevity, and payor-provider behavior.<br>
-      In my spare time, I focus my readings and writings on domestic policy programs, American history, futurism, financial technology, general health / wellness (i.e., unwisely extrapolating the results of small single-arm observational trials to my life), as well as college <a href="https://caringcent.org/615/contribute" target="_blank">athletics</a>.
+      <strong>TL;DR:</strong> I work in the healthcare investments / diligence space.<br><br>
+      <strong>Work:</strong> Includes deep dives into the markets across the entire healthcare sector, but my main interests are pre-clinical assets (led by solid tumors + neurodegenerative diseases), consumer health tech, preventative medicine / longevity, and payor-provider behavior.<br><br>
+      <strong>After Work:</strong> In my spare time, I focus my readings and writings on domestic policy programs, American history, futurism, financial technology, general health / wellness (i.e., unwisely extrapolating the results of small single-arm observational trials to my life), as well as college <a href="https://caringcent.org/615/contribute" target="_blank">athletics</a>.
     </div>
 
     <!-- Bottom Navigation Links -->
@@ -300,6 +300,8 @@
     } else {
       html.style.backgroundColor = '#F0F0F0';
       html.classList.remove('dark-mode');
+      body.classList.remove('dark-mode');
+      darkModeToggle.checked = false;
     }
 
     darkModeToggle.addEventListener('change', function() {

@@ -99,7 +99,7 @@
     min-height: 400px;
     padding: 20px;
     outline: none;
-    font-size: 1em;
+    font-size: 0.95em;
     line-height: 1.6;
     color: #000;
   }
@@ -215,7 +215,7 @@
   }
 
   .toggle-switch input:checked + .toggle-slider {
-    background-color: #4CAF50;
+    background-color: #666;
   }
 
   .toggle-switch input:checked + .toggle-slider:before {
@@ -582,6 +582,8 @@
     } else {
       html.style.backgroundColor = '#F0F0F0';
       html.classList.remove('dark-mode');
+      body.classList.remove('dark-mode');
+      darkModeToggle.checked = false;
     }
 
     darkModeToggle.addEventListener('change', function() {
