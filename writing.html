@@ -8,9 +8,14 @@
   // Apply dark mode immediately to prevent flash
   (function() {
     const isDarkMode = localStorage.getItem('darkMode') !== 'false';
+    const html = document.documentElement;
     if (isDarkMode) {
-      document.documentElement.style.backgroundColor = '#1a1a1a';
+      html.style.backgroundColor = '#1a1a1a';
+      html.classList.add('dark-mode');
       document.body.classList.add('dark-mode');
+    } else {
+      html.style.backgroundColor = '#F0F0F0';
+      html.classList.remove('dark-mode');
     }
   })();
 </script>
@@ -145,6 +150,15 @@
   }
 
   /* Dark mode styles */
+  html {
+    background: #F0F0F0;
+    min-height: 100%;
+  }
+
+  html.dark-mode {
+    background: #1a1a1a;
+  }
+
   body.dark-mode {
     background: #1a1a1a;
     color: #fff;
@@ -221,20 +235,30 @@
     // Dark mode functionality
     const darkModeToggle = document.getElementById('darkModeToggle');
     const body = document.body;
+    const html = document.documentElement;
 
     // Check localStorage or default to dark mode (on)
     const isDarkMode = localStorage.getItem('darkMode') !== 'false';
     
     if (isDarkMode) {
+      html.style.backgroundColor = '#1a1a1a';
+      html.classList.add('dark-mode');
       body.classList.add('dark-mode');
       darkModeToggle.checked = true;
+    } else {
+      html.style.backgroundColor = '#F0F0F0';
+      html.classList.remove('dark-mode');
     }
 
     darkModeToggle.addEventListener('change', function() {
       if (this.checked) {
+        html.style.backgroundColor = '#1a1a1a';
+        html.classList.add('dark-mode');
         body.classList.add('dark-mode');
         localStorage.setItem('darkMode', 'true');
       } else {
+        html.style.backgroundColor = '#F0F0F0';
+        html.classList.remove('dark-mode');
         body.classList.remove('dark-mode');
         localStorage.setItem('darkMode', 'false');
       }
