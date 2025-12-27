@@ -4,22 +4,221 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Plain Text</title>
+<script>
+  // Apply dark mode immediately to prevent flash
+  (function() {
+    const isDarkMode = localStorage.getItem('darkMode') !== 'false';
+    if (isDarkMode) {
+      document.documentElement.style.backgroundColor = '#1a1a1a';
+      document.body.classList.add('dark-mode');
+    }
+  })();
+</script>
 <style>
   body {
     margin: 0;
     padding: 30px;
-    background: #FFFFFF;
+    background: #F0F0F0;
     color: #000;
     font-family: Arial, sans-serif;
   }
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 20px;
+  }
+
+  .top-nav {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .top-nav a {
+    color: #000;
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 0.9em;
+  }
+
+  .top-nav a:hover {
+    text-decoration: underline;
+  }
+
+  .dot {
+    margin: 0 3px;
+    color: #000;
+  }
+
   pre {
     white-space: pre-wrap;
     word-wrap: break-word;
   }
+
+  .bottom-links {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .bottom-links a {
+    color: #000;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin: 0 8px;
+  }
+
+  .bottom-links a:hover {
+    text-decoration: underline;
+  }
+
+  /* Dark mode toggle */
+  .dark-mode-toggle {
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .dark-mode-toggle label {
+    font-size: 0.9em;
+    color: #000;
+    cursor: pointer;
+  }
+
+  .toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+  }
+
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 26px;
+  }
+
+  .toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .toggle-switch input:checked + .toggle-slider {
+    background-color: #4CAF50;
+  }
+
+  .toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(24px);
+  }
+
+  /* Dark mode styles */
+  body.dark-mode {
+    background: #1a1a1a;
+    color: #fff;
+  }
+
+  body.dark-mode .top-nav a {
+    color: #fff;
+  }
+
+  body.dark-mode .top-nav a:hover {
+    color: #87ceeb;
+  }
+
+  body.dark-mode .dot {
+    color: #fff;
+  }
+
+  body.dark-mode .bottom-links a {
+    color: #fff;
+  }
+
+  body.dark-mode .bottom-links a:hover {
+    color: #87ceeb;
+  }
+
+  body.dark-mode .dark-mode-toggle label {
+    color: #fff;
+  }
+
+  body.dark-mode pre {
+    color: #fff;
+  }
 </style>
 </head>
 <body>
-  <pre>
-  </pre>
+  <div class="container">
+    <div class="top-nav">
+      <a href="index.html">[home]</a>
+      <span class="dot">•</span>
+      <a href="writing.html">[writing]</a>
+      <span class="dot">•</span>
+      <a href="media.html">[media]</a>
+    </div>
+
+    <pre>
+    </pre>
+
+    <div class="bottom-links">
+      <a href="https://twitter.com/joshhansan" target="_blank">[twitter]</a>
+      <span class="dot">•</span>
+      <a href="https://instagram.com/josh_hansan" target="_blank">[instagram]</a>
+      <span class="dot">•</span>
+      <a href="https://www.linkedin.com/in/josh-hansan-1296a111a/" target="_blank">[linkedin]</a>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+      <label for="darkModeToggle">Dark Mode</label>
+      <label class="toggle-switch">
+        <input type="checkbox" id="darkModeToggle" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <script>
+    // Dark mode functionality
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    // Check localStorage or default to dark mode (on)
+    const isDarkMode = localStorage.getItem('darkMode') !== 'false';
+    
+    if (isDarkMode) {
+      body.classList.add('dark-mode');
+      darkModeToggle.checked = true;
+    }
+
+    darkModeToggle.addEventListener('change', function() {
+      if (this.checked) {
+        body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'true');
+      } else {
+        body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', 'false');
+      }
+    });
+  </script>
 </body>
 </html>

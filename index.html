@@ -4,6 +4,16 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>josh hansan dot com</title>
+<script>
+  // Apply dark mode immediately to prevent flash
+  (function() {
+    const isDarkMode = localStorage.getItem('darkMode') !== 'false';
+    if (isDarkMode) {
+      document.documentElement.style.backgroundColor = '#1a1a1a';
+      document.body.classList.add('dark-mode');
+    }
+  })();
+</script>
 <style>
   body {
     margin: 0;
@@ -20,9 +30,9 @@
     padding-left: 20px; /* Slight shift for consistency */
   }
 
-  /* Top navigation links (left-aligned) */
+  /* Top navigation links (centered) */
   .top-nav {
-    text-align: left;
+    text-align: center;
     margin-bottom: 30px;
   }
 
@@ -107,6 +117,109 @@
   .bottom-links a:hover {
     text-decoration: underline;
   }
+
+  /* Dark mode toggle */
+  .dark-mode-toggle {
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .dark-mode-toggle label {
+    font-size: 0.9em;
+    color: #000;
+    cursor: pointer;
+  }
+
+  .toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+  }
+
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 26px;
+  }
+
+  .toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  .toggle-switch input:checked + .toggle-slider {
+    background-color: #4CAF50;
+  }
+
+  .toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(24px);
+  }
+
+  /* Dark mode styles */
+  body.dark-mode {
+    background: #1a1a1a;
+    color: #fff;
+  }
+
+  body.dark-mode .top-nav a {
+    color: #fff;
+  }
+
+  body.dark-mode .top-nav a:hover {
+    color: #87ceeb;
+  }
+
+  body.dark-mode .dot {
+    color: #fff;
+  }
+
+  body.dark-mode .bottom-links a {
+    color: #fff;
+  }
+
+  body.dark-mode .bottom-links a:hover {
+    color: #87ceeb;
+  }
+
+  body.dark-mode .bio a {
+    color: #87ceeb;
+  }
+
+  body.dark-mode .location {
+    color: #ccc;
+  }
+
+  body.dark-mode .dark-mode-toggle label {
+    color: #fff;
+  }
+
+  body.dark-mode h1 {
+    color: #fff;
+  }
 </style>
 </head>
 <body>
@@ -117,9 +230,7 @@
       <span class="dot">•</span>
       <a href="writing.html">[writing]</a>
       <span class="dot">•</span>
-      <a href="https://goodreads.com/user/show/128580088" target="_blank">[books]</a>
-      <span class="dot">•</span>
-      <a href="#">[media]</a>
+      <a href="media.html">[media]</a>
     </div>
 
     <!-- Header: Name and Photo -->
@@ -147,7 +258,40 @@
       <span class="dot">•</span>
       <a href="https://www.linkedin.com/in/josh-hansan-1296a111a/" target="_blank">[linkedin]</a>
     </div>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+      <label for="darkModeToggle">Dark Mode</label>
+      <label class="toggle-switch">
+        <input type="checkbox" id="darkModeToggle" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
   </div>
+
+  <script>
+    // Dark mode functionality
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    // Check localStorage or default to dark mode (on)
+    const isDarkMode = localStorage.getItem('darkMode') !== 'false';
+    
+    if (isDarkMode) {
+      body.classList.add('dark-mode');
+      darkModeToggle.checked = true;
+    }
+
+    darkModeToggle.addEventListener('change', function() {
+      if (this.checked) {
+        body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'true');
+      } else {
+        body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', 'false');
+      }
+    });
+  </script>
 </body>
 </html>
 
